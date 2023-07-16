@@ -32,4 +32,14 @@ describe('Testing github providers routes', () => {
         done();
       });
   });
+
+  it('Should return a list or object response when search some user by username', (done) => {
+    request(app)
+      .get('/api/users/alefmach/repos')
+      .expect(200)
+      .end((err, res) => {
+        expect(typeof(res.body)).to.equal(typeof({}));
+        done();
+      });
+  });
 });
