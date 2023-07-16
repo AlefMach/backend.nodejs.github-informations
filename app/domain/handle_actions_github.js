@@ -33,6 +33,14 @@ class HandleActionsGithub {
 
         return resp
     }
+
+    async handle_get_repos(username) {
+        const github = new this.GithubRequest()
+
+        const resp = await github.request_repos_by_username(username);
+
+        return resp
+    }
 }
 
 module.exports = HandleActionsGithub

@@ -21,7 +21,19 @@ class GithubRequest{
 
         return await this.axios.get(link)
         .then((response) => {
-            return response.data
+            return response
+        })
+        .catch((error) => {
+            return error
+        });
+    }
+
+    async request_repos_by_username(username) {
+        const link = `https://api.github.com/users/${username}/repos`
+
+        return await this.axios.get(link)
+        .then((response) => {
+            return response
         })
         .catch((error) => {
             return error

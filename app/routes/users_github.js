@@ -25,7 +25,19 @@ router.get('/:username/details', async (req, res) => {
 
   const response = await github.handle_get_details(username)
 
-  response.status == 200 ? res.json(response) : res.json({'status': 'failed', 'message': 'User not found'})
+  response.status == 200 ? res.json(response.data) : res.json({'status': 'failed', 'message': 'User not found'})
+});
+
+
+/* GET repos by username. */
+router.get('/:username/repos', async (req, res) => {
+  const username = req.params.username;
+  
+  const github = new HandleActionsGithub()
+
+  const response = await github.handle_get_repos(username)
+
+  response.status == 200 ? res.json(response.data) : res.json({'status': 'failed', 'message': 'User not found'})
 });
 
 module.exports = router;
