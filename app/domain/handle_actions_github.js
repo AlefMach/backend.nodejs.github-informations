@@ -26,6 +26,13 @@ class HandleActionsGithub {
         }
     }
 
+    async handle_get_details(username) {
+        const github = new this.GithubRequest()
+
+        const resp = await github.request_details_by_username(username);
+
+        return resp
+    }
 }
 
 module.exports = HandleActionsGithub
