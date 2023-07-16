@@ -1,13 +1,27 @@
 class GithubRequest{
-    
-    async request_by_since(since){
-        const axios = require('axios');
 
+    constructor(){
+        this.axios = require('axios');
+    }
+    
+    async request_by_since(since) {
         const link = `https://api.github.com/users?since=${since}`
 
-        return await axios.get(link)
+        return await this.axios.get(link)
         .then((response) => {
             return response
+        })
+        .catch((error) => {
+            return error
+        });
+    }
+
+    async request_details_by_username(username) {
+        const link = `https://api.github.com/users/${username}`
+
+        return await this.axios.get(link)
+        .then((response) => {
+            return response.data
         })
         .catch((error) => {
             return error
