@@ -1,4 +1,4 @@
-# backend.nodejs.shawandpartners
+# backend.nodejs.github-informations
 Provide information about github user through endpoint 
 
 I'm using Express Generator for project base
