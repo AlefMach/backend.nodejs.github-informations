@@ -1,4 +1,6 @@
 # backend.nodejs.github-informations
+![](logo.jpg#vitrinedev)
+
 Provide information about github user through endpoint 
 
 I'm using Express Generator for project base
